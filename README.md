@@ -8,7 +8,7 @@ Our blog follows the Model-View-Controller (MVC) architecture, a widely-used des
 
 We use ExpressJS, a powerful and flexible Node.js web application framework, to handle the server-side logic and HTTP requests. ExpressJS allows us to easily route requests, handle middleware, and render dynamic HTML pages.
 
-To see it in action, checkout it's most recent [deployment](https://mvc-tech-blog.herokuapp.com/)
+To see it in action, checkout it's most recent [deployment.](https://mvc-tech-blog.herokuapp.com/)
 
 <br>
 
