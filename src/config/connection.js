@@ -8,7 +8,8 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
   dialectOptions: {
     decimalNumbers: true,
   },
-  logging: false
+  logging: false,
+  port: process.env.DB_PORT
 });
 
 module.exports = sequelize;
