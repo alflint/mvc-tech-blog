@@ -1,0 +1,68 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-12 text-center">
+        <h1>{{post.title}}</h1>
+        <p class="lead" style="font-size:14px;">
+            by {{post.user}}
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-12">
+        <p>{{post.date}}</p>
+        <p>{{post.content}}</p>
+        <div class="row">
+            <div class="col-12">
+                <a href="/" class="btn btn-sm btn-outline-primary">Go Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row d-flex justify-content-center">
+    <div class="col-12 text-center">
+        <h3>Comments</h3>
+    </div>
+</div>
+
+{{#if logged_in}}
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="comment-input">Add your thoughts:</label>
+            <input type="hidden" id="post-id" value="{{post_id}}">
+            <input type="hidden" id="user-id" value="{{user_id}}">
+            <textarea class="form-control" id="comment-input" rows="2"></textarea>
+            <button class="btn btn-primary mt-2" id="comment-submit">Submit</button>
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+<br>
+
+{{#each comments as |comment|}}
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card mb-2">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <b>{{comment.user}}</b>
+                {{#if is_my_comment}}
+                <button class="btn btn-sm btn-outline-danger" value="{{comment.id}}" onclick="deleteComment(this)">Delete</button>
+                {{else}}
+                <span>{{comment.date}}</span>
+                {{/if}}
+            </div>
+            <div class="card-body px-2 py-1">
+                <p class="my-1 py-0">{{comment.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/comment.js"></script>
